@@ -22,6 +22,10 @@
     <ClCompile Include="src\Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="x64\Release\image.ppm" />
+    <None Include="x64\Release\SaveImage.bat" />
+  </ItemGroup>
+  <ItemGroup>
     <ClInclude Include="src\color.h" />
     <ClInclude Include="src\ray.h" />
     <ClInclude Include="src\vec3.h" />
