@@ -26,6 +26,9 @@
     <ClInclude Include="src\ray.h" />
     <ClInclude Include="src\vec3.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
