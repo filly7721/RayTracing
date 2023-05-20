@@ -1,0 +1,1 @@
+RayTracing.exe > image.ppm
