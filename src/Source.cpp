@@ -5,13 +5,13 @@
 
 #include "ray.h"
 
-double hit_Sphere(const point3 &center,double radius, const ray &r) {
+double hit_sphere(const point3 &center,double radius, const ray &r) {
     // ray P(T) = A + b * t
     // C is circle center
     //(t^2)(b.b) + 2t b.(A-C) + (A-C).(A-C) - r^2=0
 
     //simplifications
-    //if h = b/2 then y = (-h +- sqrt(h^2-ac)) / h
+    //if h = b/2 then y = (-h +- sqrt(h^2-ac)) / a
     //discriminant = h^2-ac
     //dot(x,x) = x.length_squared();
 
@@ -23,12 +23,12 @@ double hit_Sphere(const point3 &center,double radius, const ray &r) {
     auto discriminant = h * h - a * c;
     if (discriminant < 0)
         return -1.0;
-    return (-h - sqrt(discriminant)) / h;
+    return (-h - sqrt(discriminant)) / a;
 }
 
 color ray_color(const ray &r){
-    auto t = hit_Sphere(point3(0, 0, -1), 0.5, r);
-    if (t > 0) {
+    auto t = hit_sphere(point3(0, 0, -1), 0.5, r);
+    if (t > 0.0) {
         vec3 N = unit_vector(r.at(t) - point3(0, 0, -1));
         return 0.5 * color(N.x() + 1, N.y() + 1, N.z() + 1);
     }
