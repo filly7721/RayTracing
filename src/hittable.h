@@ -1,12 +1,16 @@
 #pragma once
 
 #include "ray.h"
+#include "rtweekend.h"
+
+class material;
 
 //necessary hit information
 struct hit_record {
 
 	point3 p; // hit point
 	vec3 normal; 
+	shared_ptr<material> mat_ptr;
 	double t; // hit distance
 	bool front_face; //whether the ray intersects the outside or the inside
 
